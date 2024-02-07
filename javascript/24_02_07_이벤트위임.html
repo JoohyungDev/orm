@@ -19,18 +19,11 @@
         <script>
             const parent = document.querySelector(".parent");
             parent.addEventListener("click", function (event) {
-                console.log(this);
+                console.log(event.target);
+                if (event.target.nodeName === "BUTTON") {
+                    event.target.textContent = "버튼4";
+                }
             });
-
-            const myObj = {
-                name: "jaehyun",
-                walk() {
-                    parent.addEventListener("click", () => {
-                        console.log(this.name + " is walking");
-                    });
-                },
-            };
-            myObj.walk();
         </script>
     </body>
 </html>
