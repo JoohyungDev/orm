@@ -54,11 +54,14 @@
                     나는 며칠 동안 훈련을 해야 1만 시간이 될까?
                 </button>
             </form>
-            <section class="cont-result">
+            <section class="cont-result" style="display: none">
                 <h3 class="a11y">훈련시간 결과</h3>
                 <p>
-                    당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서<br />
-                    대략 <strong>5110일</strong> 이상 훈련하셔야 합니다 :&#41;
+                    당신은
+                    <strong><span class="labl-result"></span></strong> 전문가가
+                    되기 위해서<br />
+                    대략 <strong><span class="time-result"></span></strong>일
+                    이상 훈련하셔야 합니다 :&#41;
                 </p>
                 <a href="#none" class="btn-common">훈련하러가기 GO!GO!</a
                 ><button class="btn-common white">공유하기</button>
@@ -73,5 +76,21 @@
                 있습니다.</small
             >
         </footer>
+
+        <script>
+            // 해야될 것 -> 나는~될까 버튼을 누르면 cont-result 섹션이 화면에 떠야한다
+            // #lablField값, #lablTime값 받아서 cont-result 섹션에서 출력
+            const myBtn = document.querySelector(".btn-common");
+            myBtn.addEventListener("click", function (event) {
+                const lablF = document.getElementById("lablField").value;
+                const lablT = document.getElementById("lablTime").value;
+
+                document.querySelector(".labl-result").textContent = lablF;
+                document.querySelector(".time-result").textContent = Math.ceil(
+                    10000 / lablT
+                );
+                document.querySelector(".cont-result").style.display = "block";
+            });
+        </script>
     </body>
 </html>
