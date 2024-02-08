@@ -9,24 +9,23 @@
 
     <body>
         <script>
-            let result;
-            function xhrRequest() {
-                const requestObj = new XMLHttpRequest();
-                requestObj.open("GET", "message.txt");
-                requestObj.onreadystatechange = () => {
-                    if (
-                        requestObj.readyState === 4 &&
-                        requestObj.status === 200
-                    ) {
-                        result = requestObj.responseText;
-                        console.log(result); // 콘솔에 무엇이 찍히는지 확인해봅시다.
-                    }
-                };
-                requestObj.send();
+            async function message() {
+                const hello = await new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("hello");
+                    }, 100);
+                });
+
+                const world = await new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("world");
+                    }, 100);
+                });
+
+                console.log(`${hello} ${world}`);
             }
 
-            xhrRequest();
-            console.log(result); // 콘솔에 무엇이 찍히는지 확인해봅시다.
+            message();
         </script>
     </body>
 </html>
