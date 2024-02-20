@@ -15,14 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import index, a, b, c, hojun, orm
+from django.contrib import admin
+from django.urls import path
+from main.views import (
+    about,
+    notice,
+    notice1,
+    notice2,
+    notice3,
+    contact,
+    abcd,
+    hojun,
+    mini,
+)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index),
-    path("a/", a),
-    path("b/", b),
-    path("c/", c),
-    path("hojun/", hojun),
-    path("orm/", orm),
+    path("about/", about),
+    path("notice/", notice),
+    path("notice/1", notice1),
+    path("notice/2", notice2),
+    path("notice/3", notice3),
+    path("contact/", contact),
+    path("a/b/c/d/", abcd),
+    path("user/hojun/", hojun),
+    path("user/mini/", mini),
 ]
