@@ -1,0 +1,15 @@
+<!-- section을 제외한 base.html의 모든 부분을 상속 -->
+{% extends 'product/base.html' %}
+<!-- section을 내 맘대로 정의할 예정 -->
+{% block contents %}
+<!-- CSS, JS, 이미지 파일 등의 정적 파일을 템플릿에서 사용하도록 함 -->
+{% load static %}
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <!-- view함수에서 context딕셔너리에 저장된 값 -->
+                <h1>{{product.name}}</h1>
+                <p>{{product.description}}</p>
+            </div>
+        </section>
+{% endblock %}
