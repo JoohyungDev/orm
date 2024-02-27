@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-%yi%37d%=o+pk)957shf$kebyn#ftd%1$_7^s7mxc)o0s4uh_h"
+SECRET_KEY = "django-insecure-g%*i!z_&xm$)6ifh@_=b(p6w1@(qbjv575%k43*mt^9i48-^!-"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "accounts",
     "blog",
-    "main",
 ]
 
 MIDDLEWARE = [
@@ -119,13 +117,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-LOGIN_URL = "/accounts/login/"
-LOGOUT_URL = "/accounts/profile/"
-
-LANGUAGE_CODE = "ko-kr"
