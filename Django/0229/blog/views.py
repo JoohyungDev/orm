@@ -19,11 +19,13 @@ def blog_list(request):
         serializer = PostSerializer(
             postlist, many=True
         )  # 다수의 Queryset을 넘길 때는 many=True
-        # print(serializer)
-        # print(serializer.data)
+        print(serializer)
+        print(serializer.data)
         # return Response(100)
-        # return Response('hello world')
-        # return Response(postlist) # Queryset을 넘길 때 앞에서 직렬화 하는 코드 있어야 함
+        # return Response("hello world")
+        # return Response(
+        #     postlist
+        # )  # Queryset을 넘길 때 앞에서 직렬화 하는 코드 있어야 함
         # return Response(serializer.data)
         # return HttpResponse(serializer.data)
         # return Response(100)

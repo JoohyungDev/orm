@@ -20,6 +20,8 @@ class Comment(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
+    # related_name :Post 객체를 통해 해당 Post에 달린 댓글들을 역참조할 때 사용
+    # post.comments.all()
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
