@@ -5,6 +5,7 @@ from blog.models import Post
 
 
 class BlogTest(TestCase):
+    # 테스트에 필요한 정보를 생성하여 초기화
     def setUp(self):
         print("-- main app 테스트 BEGIN --")
         self.client = APIClient()
@@ -33,6 +34,7 @@ class BlogTest(TestCase):
         self.assertEqual(response.status_code, 403)
 
         print("-- 회원 읽기 테스트 --")
+        # 회원 정보를 넣어 제대로 동작하는지 확인
         self.client.login(username="hojun", password="dlghwns1234!")
         response = self.client.get("/blog/post/")
         self.assertEqual(response.status_code, 200)
