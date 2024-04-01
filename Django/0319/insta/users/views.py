@@ -29,3 +29,6 @@ class UserCreateView(generics.CreateAPIView):
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+    def get_object(self):
+        return self.request.user
