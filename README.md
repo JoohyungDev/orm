@@ -8,6 +8,3 @@
 
 ## 2. 블로그 주소
 https://velog.io/@jhp21c/posts
-
-
-## 3. 참고 사항
